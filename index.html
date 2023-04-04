@@ -43,7 +43,9 @@
         const [auth, setAuth] = React.useState({});
 
         const attemptTokenLogin = async () => {
+            console.log('attemptTokenLoging is called');
           const token = window.localStorage.getItem('token');
+          console.log('Token frontend', token);
           if (token) {
             const { data: auth } = await axios.get('/api/auth', {
               headers: {
